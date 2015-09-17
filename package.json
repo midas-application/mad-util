@@ -1,17 +1,18 @@
 {
   "name": "mad-util",
   "version": "0.0.1",
-  "description": "",
+  "description": "mad util libs",
   "main": "util.js",
   "shim": "util",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mad":"mad.js"
   },
   "repository": {
     "type": "git",
     "url": "http://git.code.oa.com/timlv/mad-util.git"
   },
-  "author": "",
+  "author": "timlv",
   "license": "ISC",
   "devDependencies": {
     "commander": "^2.8.1",
