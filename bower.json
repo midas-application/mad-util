@@ -1,0 +1,21 @@
+{
+  "name": "mad-util",
+  "version": "0.0.1",
+  "authors": [
+    "timlv <timlv@tencent.com>"
+  ],
+  "description": "mad util libs",
+  "main": "util.js",
+  "keywords": [
+    "mad",
+    "util"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

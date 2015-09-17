@@ -1,0 +1,65 @@
+{
+  "query":{
+    "desc":"search the DOM element",
+    "apis":"util.$,util.query.$a",
+    "dependencies":["lang"]
+  },
+  "string": {
+    "desc": "parse the string",
+    "apis": "util.string.format,util.string.escHTML"
+  },
+  "number": {
+    "desc": "parse the number/float",
+    "apis": "util.number.formatFloat"
+  },
+  "date":{
+    "desc": "parse the date",
+    "apis": "util.date.format,util.date.convertToDate,util.date.diff"
+  },
+  "lang":{
+    "desc": "judge the type of object",
+    "apis": "util.lang.is,util.lang.isFunction,util.lang.isArray"
+  },
+  "cookie":{
+    "desc":"get/set/del the cookie",
+    "apis":"util.cookie.get,util.cookie.set,util.cookie.del"
+  },
+  "storage":{
+    "desc":"get/set/del the storage",
+    "apis":"util.storage.get,util.storage.set,util.storage.del",
+    "dependencies":["cookie"]
+  },
+  "json":{
+    "desc": "parse the json",
+    "apis": "util.json.stringify,util.json.parseJSON"
+  },
+  "fn":{
+    "desc":"some  methods",
+    "apis": "util.fn.extend,util.fn.each,util.fn.delayRun",
+    "dependencies":["delayRun"]
+  },
+  "url":{
+    "desc":"parse the url",
+    "apis": "util.url.serializeParam,util.url.getParam,util.url.addParam",
+    "dependencies":["fn"]
+  },
+  "ua":{
+    "desc":"get the user agent",
+    "apis": "util.ua.android ,util.ua.iPhone,util.ua.QQ"
+  },
+  "dom":{
+    "desc":"get/set the DOM style,class,width,height",
+    "apis": "util.dom.setStyle,util.dom.getStyle,util.dom.addClass",
+    "dependencies":["lang","query"]
+  },
+  "event":{
+    "desc":"bind/unbind DOM event",
+    "apis": "util.event.on,util.event.unon,util.event.domReady",
+    "dependencies":["matchesSelector","query","fn"]
+  },
+  "request":{
+    "desc":"send ajax/jsonp/script/log request",
+    "apis": "util.request.getJsonp,util.request.ajax,util.request.loadScript",
+    "dependencies":["url","fn","event"]
+  }
+}
