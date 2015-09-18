@@ -22,11 +22,11 @@ var getPackageList = function(featureList){
                     push.apply(tempFeatureList,getDepencies(feature,false));
                 })
             }
-            if(tempFeatureList.indexOf(featureItem)==-1) {
+            if(featureItem.length>0&&tempFeatureList.indexOf(featureItem)==-1) {
                 tempFeatureList.push(featureItem);
             }
         }else if(!check){
-            if(tempFeatureList.indexOf(featureItem)==-1) {
+            if(featureItem.length>0&&tempFeatureList.indexOf(featureItem)==-1) {
                 tempFeatureList.push(featureItem);
             }
         }
@@ -49,7 +49,11 @@ var getPackageList = function(featureList){
             customize.push(tempFeature);
         }
     });
-    return customize;
+    if(customize.length>4) {
+        return customize;
+    }else{
+        return getPackageList();
+    }
 };
 var srcList = getPackageList(customizeList);
 gulp.task('build',function() {
