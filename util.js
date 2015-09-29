@@ -1,12 +1,12 @@
 /**
- * madutil.js 0.0.1
+ * madutil.js 0.0.7
  */
 (function(global,document,undefined) {
     if (global["util"]) {
         return
     }
 var madutil = global["util"] = {
-    version: "0.0.1"
+    version: "0.0.7"
 };
 var lang = madutil.lang = {
     /**
@@ -883,8 +883,8 @@ var req = module.request = {
 
 if(typeof define!="undefined") {
     define(function (require, exports, module) {
-        module.exports = exports = window.madutil;
+        module.exports = exports = window["util"];
     });
 }if (typeof module != "undefined" && module.exports) {
-    module.exports = window.madutil;
+    module.exports = window["util"];
 }

@@ -1,12 +1,20 @@
 {
   "name": "mad-util",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "mad util libs",
   "main": "util.js",
   "shim": "util",
+  "bin":{
+    "mad":"bin/mad.js"
+  },
+  "files": [
+    "util.js",
+    "src",
+    "bin"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mad":"mad.js"
+    "start": "node bin/mad.js -h"
   },
   "repository": {
     "type": "git",
@@ -14,14 +22,17 @@
   },
   "author": "timlv",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies":{
     "commander": "^2.8.1",
     "gulp": "^3.9.0",
-    "gulp-cli": "^0.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-if": "^1.2.5",
     "gulp-replace": "^0.5.3",
     "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
     "minimist": "^1.1.2"
+  },
+  "devDependencies": {
+    "gulp-cli": "^0.3.0"
   }
 }
