@@ -4,6 +4,10 @@
   "authors": [
     "timlv <timlv@tencent.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "http://git.code.oa.com/timlv/mad-util.git"
+  },
   "description": "mad util libs",
   "main": "util.js",
   "keywords": [
