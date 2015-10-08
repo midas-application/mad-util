@@ -35,8 +35,7 @@
   },
   "fn":{
     "desc":"some  methods",
-    "apis": "util.fn.extend,util.fn.each,util.fn.delayRun",
-    "dependencies":["delayRun"]
+    "apis": "util.fn.extend,util.fn.each,util.fn.delayRun"
   },
   "url":{
     "desc":"parse the url",
