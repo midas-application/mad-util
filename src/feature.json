@@ -27,7 +27,7 @@
   "storage":{
     "desc":"get/set/del the storage",
     "apis":"util.storage.get,util.storage.set,util.storage.del",
-    "dependencies":["cookie"]
+    "dependencies":["cookie","string"]
   },
   "json":{
     "desc": "parse the json",

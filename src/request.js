@@ -1,5 +1,5 @@
 var noop = function(){};
-var req = module.request = {
+var req = madutil.request = {
     /**
      * 统计请求
      * @param  {String} url 统计请求的url

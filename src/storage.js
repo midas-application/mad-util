@@ -6,13 +6,13 @@ madutil.storage = storage?{
     get : function(name,opt) {
         opt = opt || {};
         var _domain = opt.domain || location.host, _path = opt.path || "/";
-        return storage.getItem(String.format("{0}{1}@@{2}",_domain,_path,name));
+        return storage.getItem(madutil.string.format("{0}{1}@@{2}",_domain,_path,name));
     },
     set : function(name, value, opt) {
         opt = opt || {};
         var _domain = opt.domain || location.host, _path = opt.path || "/";
         try{//safari will throw on the private mode.
-            storage.setItem(String.format("{0}{1}@@{2}",_domain,_path,name),value);
+            storage.setItem(madutil.string.format("{0}{1}@@{2}",_domain,_path,name),value);
         }catch(e){
 
         }
@@ -20,6 +20,6 @@ madutil.storage = storage?{
     del : function(name, opt) {
         opt = opt || {};
         var _domain = opt.domain || location.host, _path = opt.path || "/";
-        storage.removeItem(String.format("{0}{1}@@{2}",_domain,_path,name));
+        storage.removeItem(madutil.string.format("{0}{1}@@{2}",_domain,_path,name));
     }
 }:cookie;

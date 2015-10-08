@@ -248,13 +248,13 @@ madutil.storage = storage?{
     get : function(name,opt) {
         opt = opt || {};
         var _domain = opt.domain || location.host, _path = opt.path || "/";
-        return storage.getItem(String.format("{0}{1}@@{2}",_domain,_path,name));
+        return storage.getItem(madutil.string.format("{0}{1}@@{2}",_domain,_path,name));
     },
     set : function(name, value, opt) {
         opt = opt || {};
         var _domain = opt.domain || location.host, _path = opt.path || "/";
         try{//safari will throw on the private mode.
-            storage.setItem(String.format("{0}{1}@@{2}",_domain,_path,name),value);
+            storage.setItem(madutil.string.format("{0}{1}@@{2}",_domain,_path,name),value);
         }catch(e){
 
         }
@@ -262,7 +262,7 @@ madutil.storage = storage?{
     del : function(name, opt) {
         opt = opt || {};
         var _domain = opt.domain || location.host, _path = opt.path || "/";
-        storage.removeItem(String.format("{0}{1}@@{2}",_domain,_path,name));
+        storage.removeItem(madutil.string.format("{0}{1}@@{2}",_domain,_path,name));
     }
 }:cookie;
 /**
@@ -476,7 +476,7 @@ var cacheHeight,getClientHeight  = function(doc) {
 cacheHeight = getClientHeight();
 var dom = madutil.dom = {
     setStyle : function(ele, style, value) {
-        ele = query(ele);
+        ele = query.$(ele);
         if(!lang.isObject(style)) {
             ele.style[style] = value;
         } else {
@@ -542,7 +542,7 @@ var dom = madutil.dom = {
         return this.setStyle(ele, 'display', '');
     },
     remove : function(ele) {
-        ele = query(ele);
+        ele = query.$(ele);
         ele.parentNode.removeChild(ele);
     },
     visible : function(ele) {
@@ -554,18 +554,18 @@ var dom = madutil.dom = {
     dispatchEvent:function(dom,type){
         var ev = document.createEvent('Event');
         ev.initEvent(type, true, true);
-        query(dom).dispatchEvent(ev);
+        query.$(dom).dispatchEvent(ev);
     },
     removeClass : function(ele, clsname) {
-        ele = query(ele);
+        ele = query.$(ele);
         return (ele.className = ele.className.replace(new RegExp('\\s*' + clsname + '($|\\s)\\b'), '') );
     },
     addClass : function(ele, clsname) {
-        ele = query(ele);
-        return !U.dom.hasClass(ele, clsname) && (ele.className += ' ' + clsname );
+        ele = query.$(ele);
+        return !dom.hasClass(ele, clsname) && (ele.className += ' ' + clsname );
     },
     hasClass : function ( ele, clsname) {
-        return new RegExp('\\b' + clsname + '($|\\s)\\b').test(query(ele).className);
+        return new RegExp('\\b' + clsname + '($|\\s)\\b').test(query.$(ele).className);
     },
     getScrollLeft : function(doc) {
         var _doc = doc || document;
@@ -589,7 +589,7 @@ var dom = madutil.dom = {
         return node.scrollWidth;
     },
     getNext:function(node){
-        var next = query(node);
+        var next = query.$(node);
         next = node.nextSibling;
         while(next&&next.nodeType!=1){//refetch for filting unelement
             next = next.nextSibling;
@@ -597,7 +597,7 @@ var dom = madutil.dom = {
         return next;
     },
     getPre:function(node){
-        var pre = query(node);
+        var pre = query.$(node);
         pre = node.previousSibling;
         while(pre&&pre.nodeType!=1){//refetch for filting unelement
             pre = pre.nextSibling;
@@ -720,7 +720,7 @@ var event = madutil.event = {
     }
 };
 var noop = function(){};
-var req = module.request = {
+var req = madutil.request = {
     /**
      * 统计请求
      * @param  {String} url 统计请求的url
