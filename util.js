@@ -885,6 +885,6 @@ if(typeof define!="undefined") {
     define(function (require, exports, module) {
         module.exports = exports = window["util"];
     });
-}if (typeof module != "undefined" && module.exports) {
+}else if (typeof module != "undefined" && module.exports) {
     module.exports = window["util"];
 }
