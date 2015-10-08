@@ -16,10 +16,16 @@
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*",
+    "bin",
+    "src",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    ".bowerrc",
+    ".gitignore",
+    "gulpfile.js",
+    "package.json",
+    "README.md"
   ]
 }
