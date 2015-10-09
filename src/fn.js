@@ -7,6 +7,7 @@ var nextFrame = (function() {
         function(callback) { return setTimeout(callback, 1); };
 })();
 var fn = madutil.fn = {
+    noop:function(){},
     delayRun: function (timerKey, fn, delay, object) {
         object = object || window;
         if (object._delayRunList) {
