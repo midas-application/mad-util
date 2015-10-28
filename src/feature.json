@@ -60,5 +60,10 @@
     "desc":"send ajax/jsonp/script/log request",
     "apis": "util.request.getJsonp,util.request.ajax,util.request.loadScript",
     "dependencies":["url","fn","event"]
+  },
+  "animate":{
+    "desc":"css3 dom animation",
+    "apis": "animate",
+    "dependencies":["dom","fn","event"]
   }
 }

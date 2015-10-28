@@ -1,6 +1,6 @@
 {
   "name": "mad-util",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "mad util libs",
   "main": "util.js",
   "shim": "util",
