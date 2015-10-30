@@ -10,7 +10,7 @@ var cwd = "src/",content = "                                                 ";
 var json = require('../package');
 var feature = require('../'+cwd+'feature');
 var getPackageList = function(featureList){
-    var temp  = ["intro","util"],push = Array.prototype.push,customize=[];
+    var temp  = ["intro"],push = Array.prototype.push,customize=[];
     var getDepencies = function(featureItem,check){
         var featureInfo = feature[featureItem],tempFeatureList=[];
         if(featureInfo) {

@@ -13,7 +13,7 @@ var replace = require('gulp-replace');
 var json = JSON.parse(fs.readFileSync('./package.json'));
 var feature = JSON.parse(fs.readFileSync('./'+cwd+'feature.json'));
 var getPackageList = function(featureList){
-    var temp  = ["intro","util"],push = Array.prototype.push,customize=[];
+    var temp  = ["intro"],push = Array.prototype.push,customize=[];
     var getDepencies = function(featureItem,check){
         var featureInfo = feature[featureItem],tempFeatureList=[];
         if(featureInfo) {
