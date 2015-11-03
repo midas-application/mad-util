@@ -5,6 +5,9 @@ var cacheHeight,getClientHeight  = function(doc) {
     var _doc = doc || document;
     return _doc.compatMode == "CSS1Compat" ? _doc.documentElement.clientHeight || cacheHeight : _doc.body.clientHeight;
 };
+function dasherize(str) {
+    return str.replace(/([a-z])([A-Z])/, '$1-$2').toLowerCase()
+}
 cacheHeight = getClientHeight();
 var dom = madutil.dom = {
     setStyle : function(ele, style, value) {

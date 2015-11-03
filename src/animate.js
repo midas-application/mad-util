@@ -7,11 +7,6 @@ var animate = madutil.animate = (function() {
 		transitionProperty, transitionDuration, transitionTiming, transitionDelay,
 		animationName, animationDuration, animationTiming, animationDelay,
 		cssReset = {};
-
-	function dasherize(str) {
-		return str.replace(/([a-z])([A-Z])/, '$1-$2').toLowerCase()
-	}
-
 	function normalizeEvent(name) {
 		return eventPrefix ? eventPrefix + name : name.toLowerCase()
 	}
