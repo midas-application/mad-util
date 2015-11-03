@@ -1,13 +1,13 @@
 /**
  * madutil.js 0.0.8
  */
-(function(global,document,undefined) {
+(function(global,undefined) {
     if (global["util"]) {
         return
     }
-var madutil = global["util"] = {
-    version: "0.0.8"
-};
+    var madutil = global["util"] = {
+        version: "0.0.8"
+    }
 var lang = madutil.lang = {
     /**
      * 判断某个对象是某种类型
@@ -476,6 +476,9 @@ var cacheHeight,getClientHeight  = function(doc) {
     var _doc = doc || document;
     return _doc.compatMode == "CSS1Compat" ? _doc.documentElement.clientHeight || cacheHeight : _doc.body.clientHeight;
 };
+function dasherize(str) {
+    return str.replace(/([a-z])([A-Z])/, '$1-$2').toLowerCase()
+}
 cacheHeight = getClientHeight();
 var dom = madutil.dom = {
     setStyle : function(ele, style, value) {
@@ -879,11 +882,6 @@ var animate = madutil.animate = (function() {
 		transitionProperty, transitionDuration, transitionTiming, transitionDelay,
 		animationName, animationDuration, animationTiming, animationDelay,
 		cssReset = {};
-
-	function dasherize(str) {
-		return str.replace(/([a-z])([A-Z])/, '$1-$2').toLowerCase()
-	}
-
 	function normalizeEvent(name) {
 		return eventPrefix ? eventPrefix + name : name.toLowerCase()
 	}
@@ -992,12 +990,12 @@ var animate = madutil.animate = (function() {
 
 	testEl = null
 })();
-})(window,document);
+})(this);
 
 if(typeof define!="undefined") {
     define(function (require, exports, module) {
-        module.exports = exports = window["util"];
+        module.exports = exports = this["util"];
     });
 }else if (typeof module != "undefined" && module.exports) {
-    module.exports = window["util"];
+    module.exports = this["util"];
 }
